@@ -8,6 +8,9 @@ package alarmclock;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import java.time.LocalTime;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 /**
  *
@@ -27,6 +30,22 @@ public class AlarmClock {
         Buttons but1 = new Buttons();
         Speaker sp1 = new Speaker();
         Display dis1 = new Display();
+        
+        Timer timer = new Timer();
+        but1.alarmOff();
+        TimerTask task = new TimerTask() {
+            // tarea
+            @Override
+            public void run() {
+                LocalTime tm = LocalTime.now();
+                tm = tm.plusHours(AlarmClock.hour.getHour())
+                        .plusMinutes(AlarmClock.hour.getMinute());
+                if (tm == alarm) {
+                    Speaker.playAlarm();
+                }
+            }
+        };
+        timer.schedule(task, 10, 10000);
 
         int op = 0;
 

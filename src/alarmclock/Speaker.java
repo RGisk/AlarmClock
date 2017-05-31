@@ -13,17 +13,16 @@ import java.awt.Toolkit;
  */
 public class Speaker {
 
-    
     static boolean bell;
-    
-    /**
-     * Si el boolean es true suena el beep de la alarma.
-     * @return 
-     */
-    public boolean BEEP(){
-        if (bell == true)
-            Toolkit.getDefaultToolkit().beep();
-        return bell;
+    private String melodia;
+
+    static public void playAlarm() {
+        bell = true;
     }
-   
+
+    public static void stopAlarm() {
+        bell = false;
+
+    }
+
 }

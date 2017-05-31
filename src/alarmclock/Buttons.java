@@ -26,6 +26,7 @@ public class Buttons {
      */
     public void alarmOff(){
         Display.showLeds(false,false,false);
+        Speaker.stopAlarm();
     }
     /**
      * Configuración de la alarma. Muestra los leds de alarma/set encendidos y permite ajustar la hora de la alarma.
