@@ -13,15 +13,8 @@ import java.time.Clock;
  */
 public class Display extends AlarmClock {
     
-    static boolean ledClock, ledAlarm, ledSet, button;
+    static boolean ledClock, ledAlarm, ledSet;
 
-//    public void switchBetweenHourandAlarm() {
-//        if (button == false) {
-//            visualizeHour();
-//        } else {
-//            visualizeAlarm();
-//        }
-//    }
 /**
  * Visualiza la hora por consola.
  */

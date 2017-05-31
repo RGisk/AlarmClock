@@ -34,7 +34,6 @@ public class AlarmClock {
         Timer timer = new Timer();
         but1.alarmOff();
         TimerTask task = new TimerTask() {
-            // tarea
             @Override
             public void run() {
                 LocalTime tm = LocalTime.now();
